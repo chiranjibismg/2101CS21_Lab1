@@ -11,7 +11,7 @@ int main() {
     {
     printf("Enter an operation : \n");
     printf("1.Addition\n") ;
- 
+    printf("2.Substraction\n") ;
     printf("0.Exit\n") ;
     
     int option ;
@@ -26,6 +26,13 @@ int main() {
 
     }
 
+    else if (option==2){
+      printf("Enter 2 numbers to be substracted\n") ;
+      double x , y; 
+      scanf("%lf %lf",&x,&y) ;
+      printf("%lf",(x-y)) ;
+      
+    }
 
     else if (option==0){
       printf("Thank You. Exiting now.") ;
