@@ -3,6 +3,31 @@
 //2101CS21
 //CHIRANJBI PRADHAN
 
+  
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+  
+void selectionSort(int arr[], int n)
+{
+    int i, j, min_idx;
+  
+  
+    for (i = 0; i < n-1; i++)
+    {
+   
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j] < arr[min_idx])
+            min_idx = j;
+  
+       
+        swap(&arr[min_idx], &arr[i]);
+    }
+}
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
@@ -30,6 +55,7 @@ int main() {
     }
     printf("Select the sorting algorithm you want to implement\n") ;
     printf("1.Insertion Sort\n") ;
+    printf("2.Selection Sort\n") ;
   
     int option ;
     scanf("%d",&option) ;
@@ -47,6 +73,17 @@ int main() {
     if (option ==1)
     {
       insertionSort(a,n) ;
+      printf("Sorted array is :- ")  ;
+      for ( int i =0 ;i<n ;i++)
+      {
+        printf("%d ",a[i]) ;
+      }
+      printf("\n") ;
+    }
+    
+    if (option ==2)
+    {
+      selectionSort(a,n) ;
       printf("Sorted array is :- ")  ;
       for ( int i =0 ;i<n ;i++)
       {
