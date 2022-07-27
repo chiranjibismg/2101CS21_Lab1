@@ -38,10 +38,17 @@ int main() {
     printf("Enter 2 numbers to be multiplied\n") ;
     double x , y; 
     scanf("%lf %lf",&x,&y) ;
-    printf("Production is %lf\n",(x*y)) ;
+    printf("Product is %lf\n",(x*y)) ;
       
     }
-    
+
+    else if (option==4){
+    printf("Enter 2 numbers to be divided\n") ;
+    double x , y; 
+    scanf("%lf %lf",&x,&y) ;
+    printf("Division is %lf\n",(x/y)) ;
+      
+    }
 
     else if (option==0){
       printf("Thank You. Exiting now.") ;
