@@ -10,7 +10,14 @@ void swap(int *xp, int *yp)
     *xp = *yp;
     *yp = temp;
 }
-  
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
+}
 void selectionSort(int arr[], int n)
 {
     int i, j, min_idx;
@@ -56,6 +63,7 @@ int main() {
     printf("Select the sorting algorithm you want to implement\n") ;
     printf("1.Insertion Sort\n") ;
     printf("2.Selection Sort\n") ;
+    printf("3.Bubble Sort\n") ;
   
     int option ;
     scanf("%d",&option) ;
@@ -91,6 +99,18 @@ int main() {
       }
       printf("\n") ;
     }
+
+    if (option ==3)
+    {
+      bubbleSort(a,n) ;
+      printf("Sorted array is :- ")  ;
+      for ( int i =0 ;i<n ;i++)
+      {
+        printf("%d ",a[i]) ;
+      }
+      printf("\n") ;
+    }
+
 
     
   return 0 ;
