@@ -11,7 +11,38 @@ void swap(int *xp, int *yp)
     *yp = temp;
 }
 
+int partition (int arr[], int low, int high) 
+{ 
+    int pivot = arr[high]; // pivot 
+    int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
+  
+    for (int j = low; j <= high - 1; j++) 
+    { 
+        // If current element is smaller than the pivot 
+        if (arr[j] < pivot) 
+        { 
+            i++; // increment index of smaller element 
+            swap(&arr[i], &arr[j]); 
+        } 
+    } 
+    swap(&arr[i + 1], &arr[high]); 
+    return (i + 1); 
+} 
 
+void quickSort(int arr[], int low, int high) 
+{ 
+    if (low < high) 
+    { 
+        /* pi is partitioning index, arr[p] is now 
+        at right place */
+        int pi = partition(arr, low, high); 
+  
+        // Separately sort elements before 
+        // partition and after partition 
+        quickSort(arr, low, pi - 1); 
+        quickSort(arr, pi + 1, high); 
+    } 
+} 
 void merge(int arr[], int l, int m, int r)
 {
     int i, j, k;
@@ -128,6 +159,7 @@ int main() {
     printf("2.Selection Sort\n") ;
     printf("3.Bubble Sort\n") ;
     printf("4.Merge Sort\n") ;
+    printf("5.Quick Sort\n") ;
   
     int option ;
     scanf("%d",&option) ;
@@ -153,7 +185,7 @@ int main() {
       printf("\n") ;
     }
     
-    if (option ==2)
+    else if (option ==2)
     {
       selectionSort(a,n) ;
       printf("Sorted array is :- ")  ;
@@ -164,7 +196,7 @@ int main() {
       printf("\n") ;
     }
 
-    if (option ==3)
+    else if (option ==3)
     {
       bubbleSort(a,n) ;
       printf("Sorted array is :- ")  ;
@@ -175,7 +207,7 @@ int main() {
       printf("\n") ;
     }
 
-    if (option ==4)
+    else if (option ==4)
     {
       mergeSort(a,0,n-1) ;
       printf("Sorted array is :- ")  ;
@@ -184,6 +216,23 @@ int main() {
         printf("%d ",a[i]) ;
       }
       printf("\n") ;
+    }
+
+    
+    else if (option ==5)
+    {
+      quickSort(a,0,n-1) ;
+      printf("Sorted array is :- ")  ;
+      for ( int i =0 ;i<n ;i++)
+      {
+        printf("%d ",a[i]) ;
+      }
+      printf("\n") ;
+    }
+
+    else{
+
+      printf("Wrong input .Please try again \n") ;
     }
 
 
