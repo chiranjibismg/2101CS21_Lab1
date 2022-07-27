@@ -4,14 +4,15 @@
 //CHIRANJBI PRADHAN
 
   
-void swap(int *xp, int *yp)
+void swap(int *xp, int *yp) // swapping fucntion 
 {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
 
-int partition (int arr[], int low, int high) 
+
+int partition (int arr[], int low, int high)  // partition function for quick sort 
 { 
     int pivot = arr[high]; // pivot 
     int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
@@ -29,7 +30,8 @@ int partition (int arr[], int low, int high)
     return (i + 1); 
 } 
 
-void quickSort(int arr[], int low, int high) 
+
+void quickSort(int arr[], int low, int high) // function which implements quick sort 
 { 
     if (low < high) 
     { 
@@ -43,7 +45,9 @@ void quickSort(int arr[], int low, int high)
         quickSort(arr, pi + 1, high); 
     } 
 } 
-void merge(int arr[], int l, int m, int r)
+
+
+void merge(int arr[], int l, int m, int r) //function that  merges the two array 
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -90,21 +94,18 @@ void merge(int arr[], int l, int m, int r)
         k++;
     }
 }
-void mergeSort(int arr[], int l, int r)
+void mergeSort(int arr[], int l, int r) // function that uses recursion to implement merge sort 
 {
     if (l < r) {
-    
         int m = l + (r - l) / 2;
- 
         // Sort first and second halves
         mergeSort(arr, l, m);
         mergeSort(arr, m + 1, r);
- 
         merge(arr, l, m, r);
     }
 }
  
-void bubbleSort(int arr[], int n)
+void bubbleSort(int arr[], int n) // function that implements bubble sort
 {
     int i, j;
     for (i = 0; i < n - 1; i++)
@@ -112,24 +113,19 @@ void bubbleSort(int arr[], int n)
             if (arr[j] > arr[j + 1])
                 swap(&arr[j], &arr[j + 1]);
 }
-void selectionSort(int arr[], int n)
+void selectionSort(int arr[], int n)// function that implements selection sort 
 {
     int i, j, min_idx;
-  
-  
     for (i = 0; i < n-1; i++)
     {
-   
         min_idx = i;
         for (j = i+1; j < n; j++)
           if (arr[j] < arr[min_idx])
-            min_idx = j;
-  
-       
+             min_idx = j;  
         swap(&arr[min_idx], &arr[i]);
     }
 }
-void insertionSort(int arr[], int n)
+void insertionSort(int arr[], int n) // function that implements insertion sort
 {
     int i, key, j;
     for (i = 1; i < n; i++) {
