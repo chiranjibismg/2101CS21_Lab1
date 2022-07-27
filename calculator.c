@@ -12,6 +12,7 @@ int main() {
     printf("Enter an operation : \n");
     printf("1.Addition\n") ;
     printf("2.Substraction\n") ;
+    printf("3.Multiplication\n") ;
     printf("0.Exit\n") ;
     
     int option ;
@@ -30,9 +31,17 @@ int main() {
       printf("Enter 2 numbers to be substracted\n") ;
       double x , y; 
       scanf("%lf %lf",&x,&y) ;
-      printf("%lf",(x-y)) ;
+      printf("Difference is %lf\n",(x-y)) ;
       
     }
+    else if (option==3){
+    printf("Enter 2 numbers to be multiplied\n") ;
+    double x , y; 
+    scanf("%lf %lf",&x,&y) ;
+    printf("Production is %lf\n",(x*y)) ;
+      
+    }
+    
 
     else if (option==0){
       printf("Thank You. Exiting now.") ;
